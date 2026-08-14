@@ -19,6 +19,7 @@ Math.round(v); // doesnt bring an error
 // to be avoided if possible
 
 //using uknown in type script
+ 
 
 function processvalue(value:unknown){
     if(typeof value === 'string'){ // treats value as string
@@ -27,4 +28,22 @@ function processvalue(value:unknown){
         console.log(Math.log(value));
     }
 }
+processvalue(60);
+let para=document.getElementById('pr') as HTMLDivElement;
+function getarea():number{
+    let length:number=10;
+    let width:number=6;
+    let area:number=length*width;
+    return area;
+}
+
+let button=document.getElementById('runbtn');
+let output=document.getElementById('pr');
+
+if(button && output){
+    button.addEventListener("click", ()=>{
+        output.textContent=getarea().toString();
+    });
+}
+
 // unknown is used whn dealing with data from external sources e,g APIs
