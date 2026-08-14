@@ -21,7 +21,7 @@ function processvalue(value) {
         console.log(Math.log(value));
     }
 }
-processvalue(60);
+// unknown is used whn dealing with data from external sources e,g APIs
 let para = document.getElementById('pr');
 function getarea() {
     let length = 10;
@@ -36,6 +36,13 @@ if (button && output) {
         output.textContent = getarea().toString();
     });
 }
+//lists in typescript
+let nms = [];
+nms.push("rose");
+console.log(nms);
+//tuples
+let tuple;
+tuple = [5, true, "nana"];
+console.log(tuple);
 export {};
-// unknown is used whn dealing with data from external sources e,g APIs
 //# sourceMappingURL=learn.js.map
