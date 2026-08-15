@@ -1,0 +1,83 @@
+/* Basic page setup */
+body {
+  font-family: Arial, sans-serif;
+  background-image:url(pexels-rudonni-7214230.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Card that holds everything */
+.container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input box */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Result section */
+#result {
+  margin-top: 20px;
+}
+
+#result p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+#clearbtn{
+    background-color: red;
+    color: black;
+    margin-top: 8px;
+}
+
+#clearbtn:hover{
+    background-color:#d1d5db ;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
