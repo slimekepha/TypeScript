@@ -69,19 +69,20 @@ const resultDiv = document.getElementById("result");
 const salaryinput = document.getElementById("salaryinput");
 if (button && resultDiv && salaryinput) {
     button.addEventListener("click", () => {
-        let grossSalary = Number(salaryinput.value);
+        let rawvalue = salaryinput.value.replace(/,/g, "");
+        let grossSalary = Number(rawvalue);
         if (grossSalary <= 0 || isNaN(grossSalary)) {
             resultDiv.innerHTML = '<p class="error"> Please enter a Valid salary greater than 0.</p>';
             return;
         }
         let result = calculateTaxdeduction(grossSalary);
         resultDiv.innerHTML = `
-      <p>NSSF: KES ${result.nssf}</p>
-      <p>SHIF: KES ${result.shif}</p>
-      <p>Housing Levy: KES ${result.housinglevy}</p>
-      <p>PAYE: KES ${result.paye}</p>
-      <p>Total Deductions: KES ${result.totaldeductions}</p>
-      <p><strong>Net Salary: KES ${result.netsalary}</strong></p>
+      <p>NSSF: KES ${result.nssf.toLocaleString()}</p>
+      <p>SHIF: KES ${result.shif.toLocaleString()}</p>
+      <p>Housing Levy: KES ${result.housinglevy.toLocaleString()}</p>
+      <p>PAYE: KES ${result.paye.toLocaleString()}</p>
+      <p>Total Deductions: KES ${result.totaldeductions.toLocaleString()}</p>
+      <p><strong>Net Salary: KES ${result.netsalary.toLocaleString()}</strong></p>
     `;
     });
 }
@@ -89,6 +90,25 @@ if (clearbutton && resultDiv && salaryinput) {
     clearbutton.addEventListener("click", () => {
         salaryinput.value = "";
         resultDiv.innerHTML = "";
+    });
+}
+if (salaryinput && button) {
+    salaryinput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            button.click();
+        }
+    });
+}
+if (salaryinput) {
+    salaryinput.addEventListener("blur", () => {
+        let rawvalue = salaryinput.value.replace(/[^0-9]/g, "");
+        let num = Number(rawvalue);
+        if (!isNaN(num) && rawvalue !== "") {
+            salaryinput.value = num.toLocaleString();
+        }
+        else {
+            salaryinput.value = "";
+        }
     });
 }
 export {};
