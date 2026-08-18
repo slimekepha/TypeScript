@@ -111,5 +111,17 @@ if (salaryinput) {
         }
     });
 }
+const darkmodebutton = document.getElementById("darkbtn");
+if (darkmodebutton) {
+    darkmodebutton.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        if (document.body.classList.contains("dark")) {
+            darkmodebutton.textContent = "☀️ Light Mode";
+        }
+        else {
+            darkmodebutton.textContent = "🌙 Dark Mode";
+        }
+    });
+}
 export {};
 //# sourceMappingURL=taxdeduct.js.map

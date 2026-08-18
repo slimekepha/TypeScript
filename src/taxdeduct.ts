@@ -84,7 +84,7 @@ const salaryinput = document.getElementById("salaryinput") as HTMLInputElement;
 
 if (button && resultDiv && salaryinput) {
     button.addEventListener("click", () => {
-        let rawvalue=salaryinput.value.replace(/,/g, "");
+        let rawvalue = salaryinput.value.replace(/,/g, "");
         let grossSalary: number = Number(rawvalue);
         if (grossSalary <= 0 || isNaN(grossSalary)) {
             resultDiv.innerHTML = '<p class="error"> Please enter a Valid salary greater than 0.</p>';
@@ -110,9 +110,9 @@ if (clearbutton && resultDiv && salaryinput) {
         resultDiv.innerHTML = "";
     });
 }
-if(salaryinput && button){
+if (salaryinput && button) {
     salaryinput.addEventListener("keydown", (event) => {
-        if(event.key === "Enter"){
+        if (event.key === "Enter") {
             button.click();
 
         }
@@ -120,15 +120,29 @@ if(salaryinput && button){
 
 }
 
-if(salaryinput){
+if (salaryinput) {
     salaryinput.addEventListener("blur", () => {
-        let rawvalue=salaryinput.value.replace(/[^0-9]/g, "");
-        let num=Number(rawvalue);
+        let rawvalue = salaryinput.value.replace(/[^0-9]/g, "");
+        let num = Number(rawvalue);
 
-        if(!isNaN(num) && rawvalue !== ""){
-            salaryinput.value=num.toLocaleString();
-        }else{
-            salaryinput.value="";
+        if (!isNaN(num) && rawvalue !== "") {
+            salaryinput.value = num.toLocaleString();
+        } else {
+            salaryinput.value = "";
+        }
+    });
+}
+
+const darkmodebutton = document.getElementById("darkbtn");
+
+if (darkmodebutton) {
+    darkmodebutton.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            darkmodebutton.textContent = "☀️ Light Mode";
+        } else {
+            darkmodebutton.textContent = "🌙 Dark Mode";
         }
     });
 }
