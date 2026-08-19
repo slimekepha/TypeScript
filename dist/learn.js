@@ -44,5 +44,16 @@ console.log(nms);
 let tuple;
 tuple = [5, true, "nana"];
 console.log(tuple);
+// function to get odd and even numbers
+function getoddandeven(number) {
+    if (number % 2 === 0) {
+        return "even";
+    }
+    else {
+        return "odd";
+    }
+}
+console.log(getoddandeven(4));
+console.log(getoddandeven(7));
 export {};
 //# sourceMappingURL=learn.js.map
