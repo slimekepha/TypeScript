@@ -55,5 +55,10 @@ function getoddandeven(number) {
 }
 console.log(getoddandeven(4));
 console.log(getoddandeven(7));
+//function of a sphere
+function sphereArea(radius) {
+    return 4 * Math.PI * Math.pow(radius, 2);
+}
+console.log(sphereArea(7));
 export {};
 //# sourceMappingURL=learn.js.map

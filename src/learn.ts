@@ -70,3 +70,10 @@ function getoddandeven(number:number){
 
 console.log(getoddandeven(4));
 console.log(getoddandeven(7));
+
+//function of a sphere
+
+function sphereArea(radius:number){
+    return 4*Math.PI*radius**2;
+}
+console.log(sphereArea(7));
